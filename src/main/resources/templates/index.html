@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+</head>
+<body>
+    <th:block th:text="'セッションの値：' + ${value}" />
+    <form method="post" action="/test">
+        <input type="text" name="value">
+        <button type="submit">設定</button>
+    </form>
+</body>
+</html>

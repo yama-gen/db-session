@@ -1,0 +1,35 @@
+plugins {
+    id 'org.springframework.boot' version '2.2.6.RELEASE'
+    id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'java'
+
+jar {
+    archiveBaseName = "db-session"
+    archiveVersion = "1.0.0-SNAPSHOT"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencyManagement {
+    imports {
+        mavenBom 'org.springframework.session:spring-session-bom:Corn-SR2'
+    }
+}
+
+dependencies {
+    implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
+    implementation("org.springframework.session:spring-session-core")
+    implementation("org.springframework.session:spring-session-jdbc")
+    implementation("com.h2database:h2")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+}
+
+wrapper {
+    gradleVersion = '6.3'
+}
