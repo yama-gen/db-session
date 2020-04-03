@@ -7,6 +7,7 @@ apply plugin: 'io.spring.dependency-management'
 apply plugin: 'java'
 
 jar {
+    enabled = true
     archiveBaseName = "db-session"
     archiveVersion = "1.0.0-SNAPSHOT"
 }
